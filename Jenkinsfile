@@ -9,5 +9,14 @@ pipeline {
         echo 'Directories created'
       }
     }
-}
+
+    stage('Build') {
+      steps {
+          echo 'Building application...'
+          sh 'echo "Build version: 1.0.0" > build/version.txt'
+          date >> build/version.txt
+          echo 'Build completed'
+      }
+    }
+  }
 }
