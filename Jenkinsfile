@@ -6,7 +6,8 @@ pipeline {
       steps {
         echo 'Preparing workspace...'
         sh 'mkdir -p build logs temp'
-        rcho 'Directories created'
+        echo 'Directories created'
+      }
     }
-  }
+}
 }
