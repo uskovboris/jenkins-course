@@ -27,5 +27,19 @@ pipeline {
         echo 'Verification completed'
       }
     }
+
+    stage('System Info') {
+      steps {
+        echo '=== System Information ==='
+        echo 'User:'
+        sh 'whoami'
+        echo 'Free space on the disk:'
+        sh 'df -h .'
+        echo "Build Number: ${BUILD_NUMBER}"
+        echo "Job Name: ${JOB_NAME}"
+        echo '=========================='
+      }
+    }
+
   }
 }
