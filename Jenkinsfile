@@ -17,9 +17,9 @@ pipeline {
       agent any
       steps {
         echo 'Build information..."'
-        echo "Build number '{BUILD_NUMBER}'"
-        echo "Build ID '{BUILD_ID}'"
-        echo "Build URL '{BUILD_URL}'"
+        echo "Build number '${BUILD_NUMBER}'"
+        echo "Build ID '${BUILD_ID}'"
+        echo "Build URL '${BUILD_URL}'"
       }
     }
 
@@ -27,7 +27,6 @@ pipeline {
       agent any
       steps {
         sh '''#!/bin/bash
-              echo 'Build information..."
               echo "OS '$(uname -a)'"
               echo "User '$(whoami)'"
               echo "Current directory '$(pwd)'"
