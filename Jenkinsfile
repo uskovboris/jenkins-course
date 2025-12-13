@@ -22,6 +22,19 @@ pipeline {
         echo "Build URL '{BUILD_URL}'"
       }
     }
+
+    stage('System Details') {
+      agent any
+      steps {
+        echo 'Build information..."'
+        echo "OS '$(uname -a})'"
+        echo "User '$(whoami)'"
+        echo "Current directory '$(pwd)'"
+        echo "Workspace files:"
+        sh 'ls -la'
+        
+      }
+    }
     
   }
 }
