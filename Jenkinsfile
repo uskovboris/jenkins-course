@@ -2,21 +2,14 @@ pipeline {
   agent: any
 
   stages {
-    stage('Prepare') {
+    stage('Check Agent') {
       steps {
-        echo 'Preparing workspace...'
-        sh 'mkdir -p build logs temp'
-        echo 'Directories created'
+        echo 'Running on agent...'
+        sh 'hostname'
+        echo "Path to workspace '{WORKSPACE}'"
+        echo "Node name '{NODE_NAME}'"
       }
     }
-
-    stage('Build') {
-      steps {
-          echo 'Building application...'
-          sh 'echo "Build version: 1.0.0" > build/version.txt'
-          date >> build/version.txt
-          echo 'Build completed'
-      }
-    }
+    
   }
 }
