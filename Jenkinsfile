@@ -2,21 +2,17 @@ pipeline {
   agent: any
 
   stages {
-    stage('Prepare') {
-      steps {
-        echo 'Preparing workspace...'
-        sh 'mkdir -p build logs temp'
-        echo 'Directories created'
-      }
-    }
+    stage('Variables Demo') {
+      script {
+        def appName = "MyApplication"
+        def port = 8080
+        def isProduction = false
 
-    stage('Build') {
-      steps {
-          echo 'Building application...'
-          sh 'echo "Build version: 1.0.0" > build/version.txt'
-          date >> build/version.txt
-          echo 'Build completed'
+        echo "Application name: ${appName}"'
+        echo "Port: ${port}"
+        echo "Is production build: ${isProduction}"
       }
     }
   }
+  
 }
