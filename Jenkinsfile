@@ -3,14 +3,16 @@ pipeline {
 
   stages {
     stage('Variables Demo') {
-      script {
-        def appName = "MyApplication"
-        def port = 8080
-        def isProduction = false
+      steps {
+        script {
+          def appName = "MyApplication"
+          def port = 8080
+          def isProduction = false
 
-        echo "Application name: ${appName}"
-        echo "Port: ${port}"
-        echo "Is production build: ${isProduction}"
+          echo "Application name: ${appName}"
+          echo "Port: ${port}"
+          echo "Is production build: ${isProduction}"
+        }
       }
     }
   }
