@@ -41,6 +41,7 @@ pipeline {
         echo "Dete and time"
         sh "date"
       }
+    }
     
   }
 }
