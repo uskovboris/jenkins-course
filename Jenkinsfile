@@ -34,9 +34,11 @@ pipeline {
         sh "pwd"
         echo "Workspace files:"
         sh "ls -la '${WORKSPACE}'"
-        def status = sh(script:"free -h", returnStatus:true)
-        if (status != 0) {
-          echo "Memory check skipped"
+        script {
+          def status = sh(script:"free -h", returnStatus:true)
+          if (status != 0) {
+            echo "Memory check skipped"
+          }
         }
         echo "Dete and time"
         sh "date"
