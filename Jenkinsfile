@@ -1,4 +1,4 @@
-pipeline {
+spipeline {
   agent any
 
   stages {
@@ -22,7 +22,7 @@ pipeline {
         script {
           def message = 'Jenkins Pipeline Tutorial'
           echo "Upper case: ${message.toUpperCase()}"
-          echo "Lower case: ${.toLowerCase()}"
+          echo "Lower case: ${message.toLowerCase()}"
           echo "Replace result: {message.replace('Tutorial', 'Course')}"
         }
       }
