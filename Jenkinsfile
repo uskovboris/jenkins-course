@@ -23,7 +23,7 @@ pipeline {
           def message = 'Jenkins Pipeline Tutorial'
           echo "Upper case: ${message.toUpperCase()}"
           echo "Lower case: ${message.toLowerCase()}"
-          echo "Replace result: {message.replace('Tutorial', 'Course')}"
+          echo "Replace result: ${message.replace('Tutorial', 'Course')}"
         }
       }
     }
