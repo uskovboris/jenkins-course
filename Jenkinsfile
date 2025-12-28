@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    BUILD_NUMBER = 1
+    BUILD_NUMBER = 2а
     APP_VERSION = '0.0.0'
   } // environment
 
