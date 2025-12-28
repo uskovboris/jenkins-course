@@ -2,6 +2,7 @@ pipeline {
   agent any
 
   stages {
+
     stage('Variables Demo') {
       steps {
         script {
@@ -15,6 +16,18 @@ pipeline {
         }
       }
     }
-  }
-  
-}
+
+    stage('String Operations') {
+      steps {
+        script {
+          def message = 'Jenkins Pipeline Tutorial'
+          echo "Upper case: ${message.toUpperCase()}"
+          echo "Lower case: ${.toLowerCase()}"
+          echo "Replace result: {message.replace('Tutorial', 'Course')}"
+        }
+      }
+    }
+    
+  } // stages
+
+} // pipeline
