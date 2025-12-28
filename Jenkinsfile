@@ -36,7 +36,8 @@ pipeline {
     stage('Build Version') {
       steps {
         script {
-          def major = '1', minor = '0'
+          def major = '1'
+          def minor = '0'
           env.APP_VERSION = "${major}.${minor}.${BUILD_NUMBER}"
           echo "Application version: [${env.APP_VERSION}]"
         }
