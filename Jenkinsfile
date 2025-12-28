@@ -1,6 +1,11 @@
 pipeline {
   agent any
 
+  environment {
+    BUILD_NUMBER = 1,
+    APP_VERSION = '0.0.0'
+  } // environment
+
   stages {
 
     stage('Variables Demo') {
@@ -24,6 +29,16 @@ pipeline {
           echo "Upper case: ${message.toUpperCase()}"
           echo "Lower case: ${message.toLowerCase()}"
           echo "Replace result: ${message.replace('Tutorial', 'Course')}"
+        }
+      }
+    }
+
+    stage('Build Version') {
+      steps {
+        script {
+          def major = '1', minor = '0'
+          env.APP_VERSION = "${major}.${minor}.${BUILD_NUMBER}"
+          echo "Application version: [${env.APP_VERSION}]"
         }
       }
     }
