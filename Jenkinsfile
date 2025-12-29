@@ -38,7 +38,7 @@ pipeline {
         script {
           def major = '1'
           def minor = '0'
-          env.APP_VERSION = "${major}.${minor}.${BUILD_NUMBER}"
+          env.APP_VERSION = "${major}.${minor}.${env.BUILD_NUMBER}"
           echo "Application version: [${env.APP_VERSION}]"
         }
       }
